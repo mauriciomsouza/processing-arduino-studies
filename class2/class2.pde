@@ -2,7 +2,7 @@
 ArrayList<Ball> movers = new ArrayList<Ball>();
 
 void setup() {
- size(1500,1500); 
+ size(1200,1200); 
  background(255,255,255);
  
 }
