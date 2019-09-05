@@ -1,8 +1,10 @@
 Ball b = new Ball();
+PImage img;
 
 void setup() {
-  size(700,700);
+  size(800,800);
   background(255); 
+  img = loadImage("ball.png");
 }
 
 void draw() { 

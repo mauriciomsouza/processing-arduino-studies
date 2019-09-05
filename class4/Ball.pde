@@ -2,15 +2,16 @@ class Ball {
   PVector location, velocity, gravity, propulsion;
   int size, topSpeed;
   float bounceX, bounceY, inertia;
-
+  
   Ball() {
+    
     topSpeed = -20;
     location = new PVector(width/2,height/2);
     velocity = new PVector(30,0);
     gravity = new PVector(0,0.8);
     propulsion = new PVector(0,-20);
     velocity.limit(topSpeed);
-    size = 30;
+    size = 100;
     bounceX = -0.8;
     bounceY = -0.8;
   }
@@ -41,7 +42,8 @@ class Ball {
     } if (location.y < 0) {
       location.y = 0;
     }
-    ellipse(location.x,location.y,size,size);
+    imageMode(CENTER);
+    image(img, location.x,location.y,size,size);
   }
   
 }

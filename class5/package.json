@@ -1,0 +1,19 @@
+{
+  "name": "twitter_app",
+  "version": "1.0.0",
+  "description": "crawling twitter data to a processing sketch",
+  "main": "twitter.js",
+  "scripts": {
+    "start": "node twitter.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mauricio melo",
+  "license": "ISC",
+  "dependencies": {
+    "forever": "^1.0.0",
+    "google": "^2.1.0",
+    "googlemaps": "^1.12.0",
+    "maps": "^0.3.3",
+    "twit": "^2.2.11"
+  }
+}
