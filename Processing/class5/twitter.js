@@ -2,7 +2,7 @@ var fs = require('fs'); //importo o filesystem
 var Twit = require('twit'); //importo os endpoints do twitter
 var GoogleMapsAPI = require("googlemaps");
 var config = require('./config'); //importo api keys
-var limiter = 0;
+var limiter = 10;
 
 var publicConfig = {
     key: 'AIzaSyCvIO0-2jl2R7mx8I_8MlLWpiu1gUtR6IY',
@@ -21,7 +21,7 @@ console.log("Google Maps API configurada...");
 var T = new Twit(config); //conecto com o twitter usando as api keys
 console.log("Twitter API configurada...");
 
-var stream = T.stream('statuses/filter', { track: 'love' }); // defino o streaming e a palavra buscada
+var stream = T.stream('statuses/filter', { track: 'vasco' }); // defino o streaming e a palavra buscada
 
 console.log("Iniciando streaming de tweets:")
 stream.on('tweet', function (tweet) {

@@ -1,0 +1,32 @@
+//Exemplo comunicação serial por João Bonelli
+//Processing recebe dado enviados pela Arduino atraves da Porta Serial
+
+import processing.serial.*;
+
+Serial myPort;
+int val;
+float pos, screenPos;
+
+void setup() {
+   size(800, 600);
+   pos = 0;
+   //a linha abaixo vai imprimir uma lista de portas seriais disponíveis
+   //verificar em qual porta a sua arduino está conectada
+   printArray(Serial.list());
+   String portName = Serial.list()[0]; //colocar aqui a porta serial
+   myPort = new Serial(this, portName, 9600);
+}
+
+void draw(){
+   pos++;
+   if (pos > width) {
+     
+   }
+   background(0);
+   if ( myPort.available() > 0) {
+      val = myPort.read();
+   }
+   screenPos = map(val, 0, 1024, height/2, 0);
+   ellipse(pos, screenPos, 5, 5);
+   println(val*4); //descomente essa linha para debugar
+}
